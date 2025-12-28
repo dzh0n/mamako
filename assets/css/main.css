@@ -646,3 +646,211 @@ a.footer__title:hover {
     text-align: center;
     color: #2a56a7;
 }
+
+.section-journal {
+    background: var(--color-skyblue);
+}
+
+.section-journal__articles {
+    
+}
+
+.section-journal__articles-header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.section-journal__articles-title {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 120%;
+    color: #364e7c;
+}
+
+.section-journal__articles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.article-card {
+    display: block;
+    background: #ffffff;
+    border-radius: 40px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    padding: 0px 0px 40px;
+}
+
+.article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(27, 68, 137, 0.1);
+}
+
+.article-card__image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
+    overflow: hidden;
+    background: #f0f0f0;
+    border-radius: 0 0 40px 40px;
+}
+
+.article-card__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article-card__like {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px;
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.article-card__like:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.2);
+}
+
+.article-card__like:focus {
+    outline: 2px solid #1b4489;
+    outline-offset: 2px;
+}
+
+.article-card__like svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+.article-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #456db5;
+}
+
+.article-card__time,
+.article-card__views {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 133%;
+    color: rgba(93, 107, 130, 0.5);
+}
+
+.article-card__time svg,
+.article-card__views svg {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+}
+
+.article-card__title {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    color: #1976d2;
+    padding: 0 16px;
+    margin: 0;
+}
+
+.section-journal__articles-footer {
+    text-align: left;
+}
+
+.section-journal__button {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    color: #1976d2;
+    background: var(--color-skyblue);
+    border: 2px solid #65a3e1;
+    border-radius: 9999px;
+    padding: 16px 48px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.section-journal__button:hover {
+    background: #1976d2;
+    color: #ffffff;
+}
+
+.section-journal__videos {
+    margin-top: 32px;
+}
+
+.section-journal__videos-header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.section-journal__videos-title {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 120%;
+    color: #364e7c;
+}
+
+.section-journal__videos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.section-journal__videos-footer {
+    text-align: left;
+}
+
+.article-card__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.article-card__play img {
+    width: 58px;
+    height: 58px;
+    display: block;
+}
+
+.article-card:hover .article-card__play {
+    transform: translate(-50%, -50%) scale(1.1);
+}
