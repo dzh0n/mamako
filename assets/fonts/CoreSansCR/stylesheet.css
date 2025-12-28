@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Core Sans';
+    src: url('CoreSansCR-45Regular.eot');
+    src: url('CoreSansCR-45Regular.eot?#iefix') format('embedded-opentype'),
+        url('CoreSansCR-45Regular.woff2') format('woff2'),
+        url('CoreSansCR-45Regular.woff') format('woff'),
+        url('CoreSansCR-45Regular.ttf') format('truetype'),
+        url('CoreSansCR-45Regular.svg#CoreSansCR-45Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Core Sans';
+    src: url('CoreSansCR-55Medium.eot');
+    src: url('CoreSansCR-55Medium.eot?#iefix') format('embedded-opentype'),
+        url('CoreSansCR-55Medium.woff2') format('woff2'),
+        url('CoreSansCR-55Medium.woff') format('woff'),
+        url('CoreSansCR-55Medium.ttf') format('truetype'),
+        url('CoreSansCR-55Medium.svg#CoreSansCR-55Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Core Sans';
+    src: url('CoreSansCR-15Thin.eot');
+    src: url('CoreSansCR-15Thin.eot?#iefix') format('embedded-opentype'),
+        url('CoreSansCR-15Thin.woff2') format('woff2'),
+        url('CoreSansCR-15Thin.woff') format('woff'),
+        url('CoreSansCR-15Thin.ttf') format('truetype'),
+        url('CoreSansCR-15Thin.svg#CoreSansCR-15Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Core Sans';
+    src: url('CoreSansCR-75ExtraBold.eot');
+    src: url('CoreSansCR-75ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('CoreSansCR-75ExtraBold.woff2') format('woff2'),
+        url('CoreSansCR-75ExtraBold.woff') format('woff'),
+        url('CoreSansCR-75ExtraBold.ttf') format('truetype'),
+        url('CoreSansCR-75ExtraBold.svg#CoreSansCR-75ExtraBold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+

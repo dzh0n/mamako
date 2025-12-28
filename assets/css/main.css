@@ -617,3 +617,32 @@ a.footer__title:hover {
 .product-info__link:hover {
     opacity: 0.7;
 }
+
+.section-content {
+    padding: 192px 0;
+    background: #ffffff;
+}
+
+.section-content__header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-content__pretitle {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 129%;
+    text-align: center;
+    color: var(--color-blue);
+    margin-bottom: 8px;
+}
+
+.section-content__title {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 114%;
+    text-align: center;
+    color: #2a56a7;
+}
