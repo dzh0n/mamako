@@ -1,37 +1,6 @@
-@font-face {
-    font-family: "CoreSans";
-    src: url("../fonts/CoreSans/S-Core - CoreSansCR-15Thin.otf") format("opentype");
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "CoreSans";
-    src: url("../fonts/CoreSans/S-Core - CoreSansCR-45Regular.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "CoreSans";
-    src: url("../fonts/CoreSans/S-Core - CoreSansCR-55Medium.otf") format("opentype");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "CoreSans";
-    src: url("../fonts/CoreSans/S-Core - CoreSansCR-75ExtraBold.otf") format("opentype");
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-}
-
 :root {
-    --main-font: "CoreSans";
+    --main-font: "Core Sans", sans-serif;
+    --font-family: "Core Sans", sans-serif;
     --color-brown: #bd816b;
     --color-lightgreen: #f1f6e1;
     --color-beige: #fff2e3;
