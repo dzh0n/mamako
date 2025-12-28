@@ -293,6 +293,58 @@ a {
     height: 64px;
 }
 
+.header-middle__search {
+    flex: 1 1 auto;
+    max-width: 864px;
+    height: 56px;
+}
+
+.header-middle__search form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 100%;
+    width: 100%;
+    padding: 0px 4px 0px 16px;
+    border: #1B448930 1px solid;
+    border-radius: 9999px;
+}
+
+.header-middle__search form input {
+    flex: 1 1 auto;
+    border: none;
+    outline: none;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: rgba(27, 68, 137, 0.7);
+}
+
+.header-middle__search form input::placeholder {
+    color: rgba(27, 68, 137, 0.3);
+}
+
+.header-middle__search form button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 9999px;
+    padding: 12px 24px;
+    width: 130px;
+    height: 52px;
+    background: #1b4489;
+    color: var(--color-white);
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    color: var(--color-white);
+}
 
 .header-middle__actions {
     display: flex;
