@@ -15,5 +15,22 @@ $(document).ready(function () {
         'translation': {A: {pattern: /[1,2,3,4,5,6,9]/}, 0: {pattern: /[0-9]/}}
     });
 
+    // Product Gallery Swiper
+    if (document.querySelector('.product-gallery__thumbs') && document.querySelector('.product-gallery__main')) {
+        const thumbsSwiper = new Swiper('.product-gallery__thumbs', {
+            spaceBetween: 12,
+            slidesPerView: 'auto',
+            freeMode: true,
+            watchSlidesProgress: true,
+            direction: 'vertical',
+        });
+
+        const mainSwiper = new Swiper('.product-gallery__main', {
+            spaceBetween: 0,
+            thumbs: {
+                swiper: thumbsSwiper,
+            },
+        });
+    }
 
 });
