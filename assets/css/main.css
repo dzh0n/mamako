@@ -620,6 +620,34 @@ a.footer__title:hover {
     opacity: 0.7;
 }
 
+.section-where-buy__logos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.section-where-buy__logo-item {
+    background: var(--info-soft-bg);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    transition: all 0.3s ease;
+}
+
+.section-where-buy__logo-item:hover {    
+    transform: translateY(-2px);
+}
+
+.section-where-buy__logo {
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+    mix-blend-mode: darken;
+}
+
 .product-section {
     padding: 48px 0;
     background: #ffffff;
