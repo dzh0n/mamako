@@ -1276,6 +1276,11 @@ a.footer__title:hover {
 .section-mom__accordion-icon svg {
     position: absolute;
     transition: opacity 0.3s ease;
+    color: #6aabf7;
+}
+
+.section-mom__accordion-icon svg path {
+    stroke: #6aabf7;
 }
 
 .section-mom__accordion-icon-plus {
