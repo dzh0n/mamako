@@ -361,10 +361,58 @@ $(document).ready(function () {
         if (window.innerWidth <= 768) {
             const benefitsGrid = document.querySelector('.section-mom__benefits-grid.swiper');
             if (benefitsGrid && !benefitsGrid.swiper) {
-                new Swiper('.section-mom__benefits-grid.swiper', {
+                // Function to equalize card heights
+                function equalizeCardHeights() {
+                    const slides = benefitsGrid.querySelectorAll('.swiper-slide');
+                    if (slides.length === 0) return;
+
+                    // Reset heights
+                    slides.forEach(function(slide) {
+                        const card = slide.querySelector('.section-mom__benefit-card');
+                        if (card) {
+                            card.style.height = 'auto';
+                        }
+                    });
+
+                    // Use setTimeout to ensure DOM is updated
+                    setTimeout(function() {
+                        // Find max height
+                        let maxHeight = 0;
+                        slides.forEach(function(slide) {
+                            const card = slide.querySelector('.section-mom__benefit-card');
+                            if (card) {
+                                const height = card.offsetHeight;
+                                if (height > maxHeight) {
+                                    maxHeight = height;
+                                }
+                            }
+                        });
+
+                        // Apply max height to all cards
+                        slides.forEach(function(slide) {
+                            const card = slide.querySelector('.section-mom__benefit-card');
+                            if (card && maxHeight > 0) {
+                                card.style.height = maxHeight + 'px';
+                            }
+                        });
+                    }, 10);
+                }
+
+                const benefitsSwiper = new Swiper('.section-mom__benefits-grid.swiper', {
                     slidesPerView: 2.1,
                     spaceBetween: 12,
                     freeMode: false,
+                    on: {
+                        init: function() {
+                            setTimeout(equalizeCardHeights, 50);
+                        },
+                        slideChange: function() {
+                            equalizeCardHeights();
+                        },
+                        resize: function() {
+                            equalizeCardHeights();
+                        }
+                    }
                 });
             }
         } else {
@@ -372,6 +420,11 @@ $(document).ready(function () {
             const benefitsGrid = document.querySelector('.section-mom__benefits-grid.swiper');
             if (benefitsGrid && benefitsGrid.swiper) {
                 benefitsGrid.swiper.destroy(true, true);
+                // Reset card heights
+                const cards = benefitsGrid.querySelectorAll('.section-mom__benefit-card');
+                cards.forEach(function(card) {
+                    card.style.height = '';
+                });
             }
         }
     }

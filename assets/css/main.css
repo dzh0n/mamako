@@ -2390,17 +2390,20 @@ height: 248px;
 
     .section-mom__benefits-grid.swiper .swiper-wrapper {
         display: flex !important;
+        align-items: stretch;
     }
 
     .section-mom__benefits-grid.swiper .swiper-slide {
         width: auto;
         flex-shrink: 0;
-        height: 100%;
+        height: auto;
         display: flex;
+        align-self: stretch;
     }
 
     .section-mom__benefit-card {
         height: 100%;
+        width: 100%;
     }
 
     .section-mom__video-play svg {
