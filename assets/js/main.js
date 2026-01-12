@@ -34,16 +34,6 @@ $(document).ready(function () {
     }
 
     // Section Mom Accordion
-    const benefitsToggle = document.querySelector('.section-mom__accordion-toggle');
-    const benefitsContent = document.querySelector('.section-mom__benefits-content');
-    
-    if (benefitsToggle && benefitsContent) {
-        benefitsToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            benefitsContent.classList.toggle('hidden');
-        });
-    }
-
     const accordionHeaders = document.querySelectorAll('.section-mom__accordion-header');
     accordionHeaders.forEach(function(header) {
         header.addEventListener('click', function() {
