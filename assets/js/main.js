@@ -30,7 +30,24 @@ $(document).ready(function () {
             thumbs: {
                 swiper: thumbsSwiper,
             },
+            on: {
+                init: function() {
+                    updateProductGalleryProgress(this.activeIndex, this.slides.length);
+                },
+                slideChange: function() {
+                    updateProductGalleryProgress(this.activeIndex, this.slides.length);
+                }
+            }
         });
+
+        // Update progress bar manually
+        function updateProductGalleryProgress(activeIndex, totalSlides) {
+            const progressBar = document.querySelector('.product-gallery__progress-bar');
+            if (progressBar) {
+                const progress = ((activeIndex + 1) / totalSlides) * 100;
+                progressBar.style.width = progress + '%';
+            }
+        }
     }
 
     // Section Mom Accordion
@@ -155,18 +172,21 @@ $(document).ready(function () {
     // Instruction Section Swiper
     if (document.querySelector('.section-instruction__slider')) {
         const instructionSwiper = new Swiper('.section-instruction__slider', {
-            slidesPerView: 1,
-            spaceBetween: 20,
+            slidesPerView: 1.1,
+            spaceBetween: 12,
             speed: 500,
             breakpoints: {
                 768: {
                     slidesPerView: 1.2,
+                    spaceBetween: 20,
                 },
                 1024: {
                     slidesPerView: 2.5,
+                    spaceBetween: 20,
                 },
                 1280: {
                     slidesPerView: 4.5,
+                    spaceBetween: 20,
                 }
             },
             on: {
@@ -281,21 +301,71 @@ $(document).ready(function () {
     // Reviews Section Swiper
     if (document.querySelector('.section-reviews__slider')) {
         const reviewsSwiper = new Swiper('.section-reviews__slider', {
-            slidesPerView: 1,
-            spaceBetween: 24,
+            slidesPerView: 1.1,
+            spaceBetween: 12,
             speed: 500,
             breakpoints: {
                 768: {
                     slidesPerView: 2,
+                    spaceBetween: 24,
                 },
                 1024: {
                     slidesPerView: 3,
+                    spaceBetween: 24,
                 },
                 1280: {
                     slidesPerView: 4,
+                    spaceBetween: 24,
                 }
             }
         });
     }
+
+    // Journal Articles & Videos Swiper (mobile only)
+    function initJournalSwipers() {
+        if (window.innerWidth <= 768) {
+            // Articles Swiper
+            const articlesGrid = document.querySelector('.section-journal__articles-grid.swiper');
+            if (articlesGrid && !articlesGrid.swiper) {
+                new Swiper('.section-journal__articles-grid.swiper', {
+                    slidesPerView: 1.1,
+                    spaceBetween: 12,
+                    freeMode: false,
+                });
+            }
+
+            // Videos Swiper
+            const videosGrid = document.querySelector('.section-journal__videos-grid.swiper');
+            if (videosGrid && !videosGrid.swiper) {
+                new Swiper('.section-journal__videos-grid.swiper', {
+                    slidesPerView: 1.1,
+                    spaceBetween: 12,
+                    freeMode: false,
+                });
+            }
+        } else {
+            // Destroy swipers on desktop
+            const articlesGrid = document.querySelector('.section-journal__articles-grid.swiper');
+            if (articlesGrid && articlesGrid.swiper) {
+                articlesGrid.swiper.destroy(true, true);
+            }
+            const videosGrid = document.querySelector('.section-journal__videos-grid.swiper');
+            if (videosGrid && videosGrid.swiper) {
+                videosGrid.swiper.destroy(true, true);
+            }
+        }
+    }
+
+    // Initialize on load
+    initJournalSwipers();
+
+    // Reinitialize on resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            initJournalSwipers();
+        }, 250);
+    });
 
 });

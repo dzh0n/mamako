@@ -782,6 +782,18 @@ a.footer__title:hover {
     border-radius: 40px;
 }
 
+.product-gallery__progress {
+    display: none;
+}
+
+.product-gallery__progress-bar {
+    height: 100%;
+    background: #6aabf7;
+    border-radius: 40px;
+    transition: width 0.3s ease;
+    width: 20%;
+}
+
 .product-section__title {
     font-family: var(--font-family);
     font-weight: 500;
@@ -952,6 +964,18 @@ a.footer__title:hover {
     margin-bottom: 48px;
 }
 
+.section-journal__articles-grid.swiper {
+    display: grid;
+}
+
+.section-journal__articles-grid.swiper .swiper-wrapper {
+    display: contents;
+}
+
+.section-journal__articles-grid.swiper .swiper-slide {
+    width: auto;
+}
+
 .article-card {
     display: block;
     background: #ffffff;
@@ -1106,6 +1130,18 @@ a.footer__title:hover {
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
     margin-bottom: 48px;
+}
+
+.section-journal__videos-grid.swiper {
+    display: grid;
+}
+
+.section-journal__videos-grid.swiper .swiper-wrapper {
+    display: contents;
+}
+
+.section-journal__videos-grid.swiper .swiper-slide {
+    width: auto;
 }
 
 .section-journal__videos-footer {
@@ -2049,81 +2085,338 @@ height: 248px;
         top: 70px;
     }
 
+    .section-reviews {
+        padding: 128px 0;
+        margin-bottom: -30px;
+    }
+
+    .section-journal {
+        padding: 128px 0;
+    }
+
+    .section-journal__articles-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .section-journal__videos-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+
+    .article-card__title {
+        font-size: 16px;
+    }
+
+    .product-info__subtitle {
+        font-size: 24px;
+    }
+
+    .footer__content {
+        flex-wrap: wrap;
+    }
+
+    .product-info {
+        margin-bottom: 128px;
+        background: #ffffff;
+    }
+
+    .footer__left {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .footer {
+        padding-top: 0;
+    }
+
 }
 
-@media (max-width: 992px) {
-    .section-reviews__photos {
-        height: 350px;
-    }
-    
-    .section-reviews__photo--1 {
-        width: 140px;
-        height: 180px;
-        left: 5%;
-    }
-    
-    .section-reviews__photo--2 {
-        width: 120px;
-        height: 150px;
-        left: 0;
-    }
-    
-    .section-reviews__photo--3 {
-        width: 160px;
-        height: 200px;
-    }
-    
-    .section-reviews__photo--4 {
-        width: 130px;
-        height: 170px;
-        right: 10%;
-    }
-    
-    .section-reviews__photo--5 {
-        width: 110px;
-        height: 140px;
-        right: 0;
-    }
-    
-    .section-reviews__photo--6 {
-        width: 100px;
-        height: 130px;
-        left: 15%;
-    }
-}
-
+/* Mobile styles */
 @media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+
+    /* Header mobile */
+    .header-middle {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .header-middle__logo img {
+        height: 48px;
+    }
+
+    .header-middle__actions {
+        gap: 12px;
+    }
+
+    .header-middle__actions-item-link img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .header-middle__menu-toggle {
+        width: 36px;
+        height: 36px;
+    }
+
+    .header-middle__menu-toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Section content mobile */
+    .section-content {
+        margin-bottom: 64px;
+    }
+
+    .section-content__header {
+        margin-bottom: 32px;
+    }
+
+    .section-content__pretitle {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .section-content__title {
+        font-size: 28px;
+        line-height: 120%;
+    }
+
+    .section-where-buy__logos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    /* Product section mobile */
+    .product-section {
+        padding: 24px 0 64px;
+    }
+
+    .product-section__wrapper {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .product-section__gallery {
+        width: 100%;
+        margin-left: -16px;
+        /*margin-right: -16px;*/
+        width: calc(100% + 32px);
+        padding: 0;
+    }
+
+    .product-section__info {
+        width: 100%;
+        padding: 0;
+    }
+
+    .product-gallery {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .product-gallery__thumbs {
+        display: none;
+    }
+
+    .product-gallery__main {
+        height: auto;
+        min-height: 400px;
+        border-radius: 0;
+        position: relative;
+        padding-bottom: 0px;
+    }
+
+    .product-info__weights {
+        justify-content: center;
+    }
+
+    .product-info__price {
+        justify-content: center;
+    }
+
+    .product-gallery__progress {
+        display: block;
+        position: absolute;
+        bottom: 26px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 56px;
+        height: 8px;
+        background: #D0DCE8;
+        border-radius: 40px;
+        overflow: hidden;
+        z-index: 10;
+    }
+
+    .product-gallery__progress-bar {
+        height: 100%;
+        background: #6aabf7;
+        border-radius: 40px;
+        transition: width 0.3s ease;
+        width: 20%;
+    }
+
+    .product-section__title {
+        font-size: 32px;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    .product-btn-cart {
+        width: 100%;
+        max-width: 100%;
+        height: 52px;
+        padding: 16px;
+        font-size: 16px;
+    }
+
+    .product-btn-like {
+        width: 52px;
+        height: 52px;
+        padding: 16px;
+    }
+
+    /* Reviews section mobile */
     .section-reviews__photos {
-        height: 300px;
+        height: 245px;
     }
 
     .section-reviews__photo--1 {
-        width: 100px;
-        height: 130px;
+        width: 80px;
+        height: 80px;
     }
 
     .section-reviews__photo--2 {
-        width: 90px;
-        height: 110px;
+        width: 60px;
+        height: 60px;
+        top: 40px;
     }
 
     .section-reviews__photo--3 {
-        width: 120px;
-        height: 150px;
+        width: 80px;
+        height: 80px;
     }
 
     .section-reviews__photo--4 {
-        width: 100px;
-        height: 130px;
+        width: 43px;
+        height: 43px;
+        top: 40px;
     }
 
     .section-reviews__photo--5 {
-        width: 80px;
-        height: 100px;
+        width: 43px;
+        height: 43px;
     }
 
     .section-reviews__photo--6 {
-        width: 70px;
-        height: 90px;
+        width: 66px;
+        height: 66px;
+    }
+
+    .section-reviews__photo--7 {
+        width: 123px;
+        height: 123px;
+    }
+
+    .section-reviews__slider {
+        padding-bottom: 20px;
+    }
+
+    /* Journal section mobile */
+    .section-journal__articles-grid.swiper,
+    .section-journal__videos-grid.swiper {
+        display: block;
+        overflow: hidden;
+        margin-left: -16px;
+        margin-right: -16px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .section-journal__articles-grid.swiper .swiper-wrapper,
+    .section-journal__videos-grid.swiper .swiper-wrapper {
+        display: flex !important;
+    }
+
+    .section-journal__articles-grid.swiper .swiper-slide,
+    .section-journal__videos-grid.swiper .swiper-slide {
+        width: auto;
+        flex-shrink: 0;
+    }
+
+    .marquee-section {
+        margin-bottom: 64px;
+    }
+
+    .section-mom {
+        padding: 64px 0;
+    }
+
+    .section-mom__accordion-title {
+        font-size: 22px;
+    }
+
+    .section-mom__benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-mom__video-play svg {
+        width: 58px;
+        height: 58px;
+    }
+
+    .section-doctor__thumbs-swiper .swiper-wrapper {
+        margin-left: -20px;
+    }
+
+    .section-doctor__quote-text {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .section-instruction__content {
+        min-height: 747px;
+        padding-left: 16px;
+        padding-right: 16px;
+        background-image: url('../img/instruction_bg_mob.png');
+    }
+
+    .section-instruction .container {
+        padding: 0;
+    }
+
+    .section-instruction__slider {
+        padding-left: 0;
+    }
+
+    .section-reviews {
+        padding: 64px 0;
+    }
+    .section-journal {
+        padding: 64px 0;
+    }
+
+    .product-info__subtitle {
+        font-size: 20px;
+    }
+
+    .footer__columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__right {
+        flex: 0 0 100%;
+    width: 100%;
+    }
+
+    .section-journal__button {
+        width: 100%;
     }
 }
