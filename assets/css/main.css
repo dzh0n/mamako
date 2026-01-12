@@ -1185,6 +1185,21 @@ a.footer__title:hover {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
+    align-items: stretch;
+}
+
+.section-mom__benefits-grid.swiper {
+    display: grid;
+}
+
+.section-mom__benefits-grid.swiper .swiper-wrapper {
+    display: contents;
+}
+
+.section-mom__benefits-grid.swiper .swiper-slide {
+    width: auto;
+    height: auto;
+    display: flex;
 }
 
 .section-mom__benefit-card {
@@ -1196,7 +1211,8 @@ a.footer__title:hover {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    min-height: 170px;
+    height: 100%;
+    width: 100%;
 }
 
 .section-mom__benefit-icon {
@@ -2363,8 +2379,28 @@ height: 248px;
         font-size: 22px;
     }
 
-    .section-mom__benefits-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .section-mom__benefits-grid.swiper {
+        display: block;
+        overflow: hidden;
+        margin-left: -16px;
+        margin-right: -16px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .section-mom__benefits-grid.swiper .swiper-wrapper {
+        display: flex !important;
+    }
+
+    .section-mom__benefits-grid.swiper .swiper-slide {
+        width: auto;
+        flex-shrink: 0;
+        height: 100%;
+        display: flex;
+    }
+
+    .section-mom__benefit-card {
+        height: 100%;
     }
 
     .section-mom__video-play svg {

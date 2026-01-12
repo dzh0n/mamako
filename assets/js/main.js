@@ -356,8 +356,29 @@ $(document).ready(function () {
         }
     }
 
+    // Benefits Grid Swiper (mobile only)
+    function initBenefitsSwiper() {
+        if (window.innerWidth <= 768) {
+            const benefitsGrid = document.querySelector('.section-mom__benefits-grid.swiper');
+            if (benefitsGrid && !benefitsGrid.swiper) {
+                new Swiper('.section-mom__benefits-grid.swiper', {
+                    slidesPerView: 2.1,
+                    spaceBetween: 12,
+                    freeMode: false,
+                });
+            }
+        } else {
+            // Destroy swiper on desktop
+            const benefitsGrid = document.querySelector('.section-mom__benefits-grid.swiper');
+            if (benefitsGrid && benefitsGrid.swiper) {
+                benefitsGrid.swiper.destroy(true, true);
+            }
+        }
+    }
+
     // Initialize on load
     initJournalSwipers();
+    initBenefitsSwiper();
 
     // Reinitialize on resize
     let resizeTimer;
@@ -365,6 +386,7 @@ $(document).ready(function () {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
             initJournalSwipers();
+            initBenefitsSwiper();
         }, 250);
     });
 
